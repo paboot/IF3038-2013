@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
 <HTML>
 <HEAD>
+	<script type="text/javascript" language="javascript" src="js/registrationScript.js"></script>
+	<script type="text/javascript" language="javascript" src="js/dor.js"></script>
+	<script type="text/javascript" language="javascript" src="js/calendar.js"></script>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/dor.css" type="text/css">
-	<script type="text/javascript" language="javascript" src="js/dor.js"></script>
-	<TITLE>Fuu</TITLE>
+	<link rel="stylesheet" href="css/calendar.css" type="text/css">
+	<TITLE>Home</TITLE>
 </HEAD>
 <BODY>
 	<div class="header">
@@ -43,6 +46,35 @@
 		<p>Syalalalala</p>
 		<p>Syalalalala</p>
 		<p>Syalalalala</p>
+	</div>
+	<div class="registration">
+		<div class="headerRegistration">
+			Daftar!		
+		</div>
+
+		<div class="registration1">
+			<br>
+			<form name="registrasi">
+			Username:<br>
+			<input type="text" onchange="validateUsername(registrasi);disable(registrasi)" size=20 name="username"><label id="errorMsgUsername"></label><br>
+			Password:<br>
+			<input type="password" onchange="validatePassword(registrasi);disable(registrasi)" size=20 name="password"><label id="errorMsgPassword"></label><br>
+			Confirm Password:<br>
+			<input type="password" onchange="confirmPassword(registrasi);disable(registrasi)" size=20 name="cnfpassword"><label id="errorMsgCnfPassword"></label><br>
+			Nama Lengkap:<br>
+			<input type="text" onchange="validateNama(registrasi);disable(registrasi)" size=20 name="nama"><label id="errorMsgNama"></label><br>
+			Tanggal Lahir:<br>
+			<input size=20 name="tanggal" id="tangga;"><label id="errorMsgTanggal"></label><br>
+			<script type="text/javascript">
+				calendar.set("tanggal");
+			</script>
+			Email:<br>
+			<input type="text" onchange="validateEmail(registrasi);disable(registrasi)" size=20 name="email"><label id="errorMsgEmail"></label><br>
+			Upload Avatar:<br>
+			<input type="file" name="file" onchange="Checkfiles()" id="filename"><label id="errorMsgAvatar"></label><br><br><br>
+			<input type="submit" id="submit" value="Register" disabled>
+			</form>
+		</div>
 	</div>
 	<div class="footer">Copyright - The PIG Team</div>
 	<div id="overlay">

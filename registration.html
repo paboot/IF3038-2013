@@ -1,0 +1,53 @@
+<html>
+<head>
+<script src="js/registrationScript.js"></script>
+<title>Registration Form</title>
+</head>
+<body>
+<div id="container" style="width:800px">
+	<div id="header" style="background-color:#FFA500;">
+		<h1 style="margin-bottom:0;">Registration Form</h1>
+	</div>
+
+	<div id="menu" style="background-color:#FFFFFF;width:25%;float:left>
+		<br>
+		Username:<br>
+		Password:<br>
+		Confirm Password:<br>
+		Nama Lengkap:<br>
+		Tanggal Lahir:<br>
+		Email:<br>
+		Upload Avatar:<br>
+	</div>
+
+	<div id="content" style="background-color:#FFFFFF;width:25%;float:left;">
+		<br>
+		<form name="registrasi">
+		<input type="text" onchange="validateUsername(registrasi);" size=20 name="username"><br>
+		<input type="password" onchange="validatePassword(registrasi);" size=20 name="password"><br>
+		<input type="password" onchange="confirmPassword(registrasi);" size=20 name="cnfpassword"><br>
+		<input type="text" onchange="validateNama(registrasi);" size=20 name="nama"><br>
+		<input type="text" size=20 name="tanggal"><br>
+		<input type="text" onchange="validateEmail(registrasi);" size=20 name="email"><br>
+		<input type="file" name="file" class="input"><br>
+		<input type="submit" value="Submit">
+		</form>
+	</div>
+
+	<div id="content" style="color:red;background-color:#FFFFFF;width:50%;float:left;">
+		<br>
+		<label id="errorMsgUsername"></label><br>
+		<label id="errorMsgPassword"></label><br>
+		<label id="errorMsgCnfPassword"></label><br>
+		<label id="errorMsgNama"></label><br>
+		<label id="errorMsgTanggal"></label><br>
+		<label id="errorMsgEmail"></label><br>
+	</div>
+
+	<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+	Copyright - thePIG Team
+	</div>
+</div>
+
+</body>    
+</html>
