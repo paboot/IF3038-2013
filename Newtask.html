@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/dor.css" type="text/css">
+	<script type="text/javascript" language="javascript" src="js/dor.js"></script>
+	<TITLE>Fuu New Task Form</TITLE>
+</HEAD>
+<BODY>
+	<div class="header">
+		<div class="logo">
+		SYUUUUUU
+		</div>
+		<div class="headerlink">
+			<a href="#loginform" onclick="ShowBlack()">Login </a>
+			or
+			<a href="LoggedIn.html" onclick="">Register</a>
+		</div>
+	</div>
+	<div class="content">
+		<form name="newtask" method=POST>
+			<label>Nama Tugas : </label>
+			<input type="text" name="name" class="input" tabindex="1" required>
+			<br>
+			<label>Attachment : </label>
+			<input type="file" name="file" class="input" tabindex="2">
+			<br>
+			<label>Deadline : </label>
+			<input type="date" name="date" tabindex="3">
+			<br>
+			<label>Assignee : </label>
+			<input type="text" name="assignee" class="input" tabindex="4" required>
+			<br>
+			<label>Tag : </label>
+			<input type="text" name="tag" class="input" tabindex="5">
+			<br>
+			<button tabindex="6" id="submittask" onclick="Validate(newtask)">Submit</button>
+		</form>
+	</div>
+	<div class="footer">Copyright - The PIG Team</div>
+</BODY>
+</HTML>

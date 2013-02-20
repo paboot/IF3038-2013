@@ -12,7 +12,7 @@ function HideBlack()
 
 function ValidateLogin()
 {
-	if (document.loginform.username.value=="admin" && document.loginform.password.value=="admin")
+	if (document.loginform.username.value=="admin" && document.loginform.password.value=="adminadmin")
 	{
 		document.loginform.action="LoggedIn.html";
 	}
@@ -47,9 +47,4 @@ function ReportErrors(errors)
 		msg += "\n" + numError + ". " + errors[i];
 	}
 	alert(msg);
-}
-
-function Profile()
-{
-
 }
