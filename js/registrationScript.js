@@ -1,5 +1,5 @@
 function disable(form) {
-	if ((validateUsername(form)&&validatePassword(form)&&confirmPassword(form)&&validateNama(form)&&validateEmail(form)&&Checkfiles()))
+	if (validateUsername(form)&&validatePassword(form)&&confirmPassword(form)&&validateNama(form)&&validateEmail(form)&&Checkfiles())
 		document.getElementById("submit").disabled=false;
 	else
 		document.getElementById("submit").disabled=true;
@@ -65,7 +65,7 @@ else
 
 function validateTanggal(form){
 var validate5= /((19|20)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])/
-if (!validate5.test(form.tanggal.value)){
+if (validate5.test(form.tanggal.value)){
 	document.getElementById("errorMsgTanggal").innerHTML = "*Tanggal tidak sesuai format";
 	return false;}
 else
