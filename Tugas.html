@@ -3,8 +3,8 @@
 <HEAD>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/dor.css" type="text/css">
-	<script type="text/javascript" language="javascript" src="js/dor.js"></script>
-	<TITLE>Fuu Rincian Tugas</TITLE>
+	<script type="text/javascript" language="javascript" src="js/task1.js"></script>
+	<TITLE>Rincian Tugas</TITLE>
 </HEAD>
 <BODY>
 	<div class="header">
@@ -18,22 +18,41 @@
 		</div>
 	</div>
 	<div class="content">
-		<h1>Rincian Tugas</h1>
-		<br><br>
-		<div class="taskcontent">
-			<p>Nama Tugas : Pemrograman Internet</p><br>
-			<p>Deadline : 02/22/2013</p><br>
-			<p>Assignee : Filbert R., M. Iqbal, Gilang L.L.</p><br>
-			<p>Komentar :
-			<textarea rows="5" cols="25" name="komentar"></textarea>
-			<button>Submit</button></p><br>
-			<p>Tag : To-do list, HTML, CSS, Javascript</p><br>
-			Attachment : <img src="Internet.jpg" id="internet"></img>
-			<br>
-			<br>
-			<button name="edittask" id="taskbtn">Edit Task</button>
-			
-			
+		<div class="taskheadercontent">
+				Rincian Tugas
+		</div>
+		<div class="taskcontainer">
+			<br><br>
+			<div class="taskcontent">
+				Nama Tugas<br>
+				Deadline<br>
+				Assignee<br>
+				Komentar<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				Tag <br>
+				Attachment					
+			</div>
+			<div class="taskcontent2">
+				 : Pemrograman Internet<br>
+				 : <label id="deadline">02/22/2013</label><br>
+				 : <label id="asignee">Filbert R., M. Iqbal, Gilang L.L.</label><br>
+				 :<br><textarea rows="5" cols="25" name="komentar"></textarea>
+				  <button>Submit</button><br><br>
+				 : <label id="tag">To-do list, HTML, CSS, Javascript</label><br>
+				 : <input type="file" name="attach" id="attach" onchange="Show()"></input><br>
+				 <label id="show"></label>
+			</div>
+			<div class ="savechange">
+				<label id="taskbutton"><button name="savechange" id="savechange" onclick="Done()" disabled>Save Change</button></label>
+			</div>
+			<div class ="edittask">
+				<label id="taskbutton"><button name="edittask" id="taskbtn" onclick="Edit()">Edit Task</button></label>
+			</div>
 		</div>
 	</div>
 	<div class="footer">Copyright - The PIG Team</div>
