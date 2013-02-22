@@ -4,63 +4,117 @@
 	<title>Progin !</title>
 </head>
 
-<body>
-	
-	<div id="sidebar">
-		<div class="kategori" onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="showRPL()">Rekayasa Perangkat Lunak</div>
-		<div class="kategori" onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="showRPL()">Keamanan Informasi</div>
-		<div class="kategori"onmouseover="mOver(this)" onmouseout="mOut(this)">Sistem Basis data</div>
-		<div class="kategori" onmouseover="mOver(this)" onmouseout="mOut(this)">Pemrograman Internet</div>
-	</div>
+<body background="gray.jpg">
+	<div class="container">
+		<div id="sidebar">
+			<div><button id="AllCat" class="catButton" type="button" onclick="showAll();select(this)"> All Categories </button></div>
+			<div><button id="Kuliah" class="catButton" type="button" onclick="showList(this);select(this)"> Kuliah </button></div>
+			<div><button id="Organisasi" class="catButton" type="button" onclick="showList(this);select(this)"> Organisasi </button></div>
+			<div><button id="Proyek" class="catButton" type="button" onclick="showList(this);select(this)"> Proyek </button></div>
+			<div id="tombolKategori"><button id="addCategory" class="catbutton" name="addKategori()" type="button" onclick="showCatForm()">Add Category</button></div>
+			<div id="category_new_form">
+				<form class="inputCategory" name="inputCategory">
+					Kategori<br> <input type="text" name="kategori"> <br>
+					User<br><input type="text" name="user"><br>
+					<input type="submit" value="submit" onclick="addCategory()">
+				</form>
+			</div>
+		</div>
 
-	<div id="content">
-		<div class="list RPL" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()">Ini coba list 1</div>
-		<div class="list KI" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> Ini coba list 2</div>
-		<div class="list SBD" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> Ini coba list 3</div>
-		<div class="list Progin" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> Ini coba list 4</div>
-		<div class="list Progin" class="Progin" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> Ini coba list 5</div>
-		<div class="list Progin" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> Ini coba list 6</div>
-	</div>
+		<div id="kategoriContent">
+			<div class="task Kuliah" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()">
+			<p class="taskName">Bikin Genetic Algorithm AI</p>
+			<p class="taskClock">10:00 AM</p>
+			<p class="taskDate">22 February 2013</p>
+			<p class="taskTag">Tag : AI, Algoritma, Genetic Algorithm, Tubes</p>
+			</div>
+			<div class="task Organisasi" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> <p class="taskName">Rapat Koordinasi</p>
+			<p class="taskClock">10:00 AM</p>
+			<p class="taskDate">23 February 2013</p>
+			<p class="taskTag">Tag : HMIF, SPARTA, lolwutt</p>
+			</div>
+			<div class="task Proyek" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> <p class="taskName">Ketemu Client</p>
+			<p class="taskClock">1:00 PM</p>
+			<p class="taskDate">24 February 2013</p>
+			<p class="taskTag">Tag : Website design, proyek, uang, duit</p>
+			</div>
+			<div class="task Kuliah" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> <p class="taskName">Kerjain tubes Progin</p>
+			<p class="taskClock">11:00 AM</p>
+			<p class="taskDate">25 February 2013</p>
+			<p class="taskTag">Tag : Progin, website, internet, tubes</p>
+			</div>
+			<div class="task Proyek" class="Progin" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> <p class="taskName">Bikin homepage</p>
+			<p class="taskClock">10:00 AM</p>
+			<p class="taskDate">26 February 2013</p>
+			<p class="taskTag">Tag : proyek, website design, homepage, uang, duit</p>
+			</div>
+			<div class="task Organisasi" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> 
+			<p class="taskName">Bersih-bersih sekre</p>
+			<p class="taskClock">09:00 AM</p>
+			<p class="taskDate">27 February 2013</p>
+			<p class="taskTag">Tag : HMIF, bersih, sekre</p>
+			</div>
+			<button id="addTask" class="button">Add Task</button>
+		</div>
+	</div =>
 	
 	<script>
-		function mOver(obj){
-			obj.style.backgroundColor="white";
-		}		
-		function mOut(obj){
-			obj.style.backgroundColor="blue";
-		}		
+		
 		function mOverList(obj){
 			obj.style.backgroundColor="yellow";
 		}		
 		function mOutList(obj){
-			obj.style.backgroundColor="white";
+			obj.style.backgroundColor="#f5fc8f";
 		}		
 		function redirect(){
 			window.location="http://www.google.com";
 		}
-		function showRPL(){
-			var rplList=document.getElementsByClassName('RPL');
-			var parent=document.getElementById("content");
-			for (var i=0;i<rplList.length;i++){
-				parent.removeChild(rplList[i]);
+		function showList(obj){
+			var allList=document.getElementsByClassName('task');
+			for (var i=0;i<allList.length;i++){
+				allList[i].style.display="none";
 			}
-			var rplList=document.getElementsByClassName('RPL');
-			var parent=document.getElementById("content");
-			for (var i=0;i<rplList.length;i++){
-				parent.removeChild(rplList[i]);
+			var selectedCat = obj.id;
+			var ListRPL=document.getElementsByClassName(selectedCat);
+			for (var i=0;i<ListRPL.length;i++){
+				ListRPL[i].style.display="block";
 			}
-			var rplList=document.getElementsByClassName('RPL');
-			var parent=document.getElementById("content");
-			for (var i=0;i<rplList.length;i++){
-				parent.removeChild(rplList[i]);
+			document.getElementById('addTask').style.display="block";
+		}
+		function showAll(){
+			var allList=document.getElementsByClassName('task');
+			for (var i=0;i<allList.length;i++){
+				allList[i].style.display="block";
 			}
-			var rplList=document.getElementsByClassName('RPL');
-			var parent=document.getElementById("content");
-			for (var i=0;i<rplList.length;i++){
-				parent.removeChild(rplList[i]);
-			}
+			document.getElementById('addTask').style.display="none";
 		}
 		
+		function select(obj){		
+			var arrayCatButt=document.getElementsByClassName('catButton');
+			for (var i=0;i<arrayCatButt.length;i++){
+				arrayCatButt[i].style.background="#65a9d7";
+			}
+			obj.style.background="black";
+		}		
+		function showCatForm(){
+			document.getElementById("category_new_form").style.display="block";
+		}
+		function addCategory(){
+			var newDiv = document.createElement('div');
+			var newButton = document.createElement("button");
+			var newCat=document.crateTextNode(document.inputCategory.kategori.value);
+			var coba=document.createTexkNode("hahahaha");
+			
+			
+			newButton.setAttribute('class', 'catButton');
+			newButton.setAttribute('type', 'button');
+			
+			newButton.appendChild(coba);
+			
+			div_cat_button = document.getElementById("coba");
+			document.body.insertBefore(newButton, div_cat_button);
+			
+		}
 	</script>
 	
 </body>
