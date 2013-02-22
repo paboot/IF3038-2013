@@ -2,9 +2,11 @@
 <HTML>
 <HEAD>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/dor.css" type="text/css">
-	<script type="text/javascript" language="javascript" src="js/dor.js"></script>
-	<TITLE>Fuu New Task Form</TITLE>
+	<link rel="stylesheet" href="css/dor.css" type="text/css">	
+	<link rel="stylesheet" href="css/calendar.css" >
+	<script type="text/javascript" language="javascript" src="js/form2.js"></script>	
+	<script type="text/javascript" language="javascript" src="js/calendar.js"></script>
+	<TITLE>Buat Tugas Baru</TITLE>
 </HEAD>
 <BODY>
 	<div class="header">
@@ -12,30 +14,38 @@
 		SYUUUUUU
 		</div>
 		<div class="headerlink">
-			<a href="#loginform" onclick="ShowBlack()">Login </a>
+			<a href="Profile.html" onclick="">Profile </a>
 			or
-			<a href="LoggedIn.html" onclick="">Register</a>
+			<a href="Index.html" onclick="">Logout</a>
 		</div>
 	</div>
 	<div class="content">
-		<form name="newtask" method=POST>
-			<label>Nama Tugas : </label>
-			<input type="text" name="name" class="input" tabindex="1" required>
-			<br>
-			<label>Attachment : </label>
-			<input type="file" name="file" class="input" tabindex="2">
-			<br>
-			<label>Deadline : </label>
-			<input type="date" name="date" tabindex="3">
-			<br>
-			<label>Assignee : </label>
-			<input type="text" name="assignee" class="input" tabindex="4" required>
-			<br>
-			<label>Tag : </label>
-			<input type="text" name="tag" class="input" tabindex="5">
-			<br>
-			<button tabindex="6" id="submittask" onclick="Validate(newtask)">Submit</button>
-		</form>
+		<div class="taskheadercontent2">
+			Buat Tugas Baru
+		</div>
+		<div class="newtaskcontainer">
+			<br><br>
+			<div class="newtaskcontent">	
+				Nama Tugas<br>
+				Deadline<br>
+				Asignee<br>
+				Tag<br>
+				Attachment<br>
+			</div>
+			<div class="newtaskcontent2">
+			<form name="newtask" action="dashboard.html">
+				: <input type="text" onkeypress="validateNamaTugas(newtask);disable(newtask)" size=20 name="namatugas"><label id="errorMsgNamaTugas"></label><br>
+				: <input size=20 name="tanggal" onchange="" id="tanggal"><label id="errorMsgTanggal"></label><br>
+				<script type="text/javascript">
+					calendar.set("tanggal");
+				</script>
+				: <input type="text" onkeypress="validateAsignee(newtask);disable(newtask)" size=20 name="asignee"><label id="errorMsgAsignee"></label><br>
+				: <input type="text" onkeypress="validateTag(newtask);disable(newtask)" size=20 name="tag"><label id="errorMsgTag"></label><br>
+				: <input type="file" name="file" onchange="Checkfiles();disable(newtask)" id="filename"><label id="errorMsgAvatar1"></label><br><br><br>
+				&nbsp; <input type="submit" id="submit" value="Submit" disabled >
+			</form>
+			</div>
+		</div>
 	</div>
 	<div class="footer">Copyright - The PIG Team</div>
 </BODY>

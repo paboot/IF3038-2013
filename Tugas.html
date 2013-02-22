@@ -3,7 +3,9 @@
 <HEAD>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/dor.css" type="text/css">
-	<script type="text/javascript" language="javascript" src="js/task1.js"></script>
+	<link rel="stylesheet" href="css/calendar.css" >
+	<script type="text/javascript" language="javascript" src="js/form.js"></script>
+	<script type="text/javascript" language="javascript" src="js/calendar.js"></script>
 	<TITLE>Rincian Tugas</TITLE>
 </HEAD>
 <BODY>
@@ -35,23 +37,28 @@
 				<br>
 				<br>
 				Tag <br>
-				Attachment					
+				Attachment				
 			</div>
 			<div class="taskcontent2">
+				<label id="form"></label>
 				 : Pemrograman Internet<br>
 				 : <label id="deadline">02/22/2013</label><br>
+				 <script type="text/javascript">
+				 calendar.set("deadline1");
+			     </script>
 				 : <label id="asignee">Filbert R., M. Iqbal, Gilang L.L.</label><br>
 				 :<br><textarea rows="5" cols="25" name="komentar"></textarea>
 				  <button>Submit</button><br><br>
 				 : <label id="tag">To-do list, HTML, CSS, Javascript</label><br>
-				 : <input type="file" name="attach" id="attach" onchange="Show()"></input><br>
+				 : <input type="file" name="attach" id="attach" onchange="Show()"><br>
 				 <label id="show"></label>
+				 <label id="endform"></label>
 			</div>
 			<div class ="savechange">
-				<label id="taskbutton"><button name="savechange" id="savechange" onclick="Done()" disabled>Save Change</button></label>
+				<label id="taskbutton"><button name="savechange" id="savechange" onclick="Done()" disabled>Simpan</button></label>
 			</div>
 			<div class ="edittask">
-				<label id="taskbutton"><button name="edittask" id="taskbtn" onclick="Edit()">Edit Task</button></label>
+				<label id="taskbutton1"><button name="edittask" id="taskbtn" onclick="Edit()">Edit Task</button></label>
 			</div>
 		</div>
 	</div>
